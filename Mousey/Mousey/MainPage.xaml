@@ -4,11 +4,43 @@
              xmlns:local="clr-namespace:Mousey"
              x:Class="Mousey.MainPage">
 
-    <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Text="Mousey" Grid.Row="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+        <Label Text="{Binding Net}" Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+        <Label Text="{Binding Label}"
+               Grid.Row="2"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"/>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="X points:" Grid.Row="0"/>
+            <ListView ItemsSource="{Binding PointsX}" Grid.Row="1" 
+                    BackgroundColor="White" SeparatorVisibility="Default" SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Label Text="{Binding}"/>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
 
 </ContentPage>

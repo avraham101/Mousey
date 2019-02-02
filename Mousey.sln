@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mousey.Android", "Mousey\Mousey.Android\Mousey.Android.csproj", "{222E14DC-5E2B-4670-8DC1-C9F688C54D10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mousey", "Mousey\Mousey\Mousey.csproj", "{BF183611-422C-4FCA-B1EA-95B32B2D2E7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mousey", "Mousey\Mousey\Mousey.csproj", "{BF183611-422C-4FCA-B1EA-95B32B2D2E7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

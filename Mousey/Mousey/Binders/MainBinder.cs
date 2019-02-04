@@ -13,20 +13,10 @@ namespace Mousey
         //Properties to what to see
         private String label ="";
         private String net = "";
+        private String ip = "IP";
+        private String port = "Port";
+        private String conn = "Not Connected";
 
-        private ObservableCollection<string> _pointsX;
-        public ObservableCollection<string> PointsX
-        {
-            get
-            {
-                return _pointsX;
-            }
-            set
-            {
-                _pointsX = value;
-                OnPropertyChanged("PointsX");
-            }
-        }
         public String Label
         {
             get { return label; }
@@ -45,27 +35,44 @@ namespace Mousey
                 OnPropertyChanged("Label");
             }
         }
-
-        public void AddPointX(string xpoint)
+        public String Ip
         {
-            if (_pointsX.Count > 0)
+            get
             {
-                if (_pointsX[_pointsX.Count - 1].CompareTo(xpoint) != 0)
-                {
-                    _pointsX.Add(xpoint);
-                    OnPropertyChanged("PointsX");
-                }
+                return ip;
             }
-            else
+            set
             {
-                _pointsX.Add(xpoint);
-                OnPropertyChanged("PointsX");
+                ip = value;
+                OnPropertyChanged("Ip");
             }
-            
+        }
+        public String Port
+        {
+            get
+            {
+                return port;
+            }
+            set
+            {
+                port = value;
+                OnPropertyChanged("Port");
+            }
+        }
+        public String Conn
+        {
+            get
+            {
+                return conn;
+            }
+            set
+            {
+                conn = value;
+                OnPropertyChanged("Conn");
+            }
         }
         public MainBinder()
         {
-            _pointsX = new ObservableCollection<string>();
         }
 
         //The Method For the binding, Property Changed

@@ -70,5 +70,11 @@ namespace Mousey
         {
             return connected;
         }
+
+        public void changeCon(String url,int port)
+        {
+            this.url = url;
+            this.port = port;
+        }
     }
 }

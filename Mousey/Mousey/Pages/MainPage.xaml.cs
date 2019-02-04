@@ -18,8 +18,13 @@ namespace Mousey
             InitializeComponent();
             binder = new MainBinder();
             action_handler = new Active1(binder);
-            Client me = new Client(binder);
             this.BindingContext = binder;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            action_handler.Start(binder.Ip,Int32.Parse(binder.Port));
+            binder.Conn = "Connected";
         }
 
         private class Active1 : Activity, ISensorEventListener
@@ -29,20 +34,23 @@ namespace Mousey
             SensorManager _sensorManager;
 
             ConnectionHandler handler;
-            String url = "192.168.14.135";
-            int port = 1250;
             public Active1(MainBinder binder)
             {
                 this.binder = binder;
-                startConnectetion();
+                init();
                 _sensorManager = (SensorManager)Android.App.Application.Context.GetSystemService(Context.SensorService);
                 _sensorManager.RegisterListener(this, _sensorManager.GetDefaultSensor(SensorType.Accelerometer)
                     , SensorDelay.Normal);
             }
 
-            private void startConnectetion()
+            private void init()
             {
-                handler = new ConnectionHandler(url, port);
+                handler = new ConnectionHandler("", -1);
+            }
+
+            public void Start(String url,int port)
+            {
+                handler.changeCon(url, port);
                 handler.StartConnection();
             }
 
@@ -51,6 +59,7 @@ namespace Mousey
 
             }
 
+            //the x
             void ISensorEventListener.OnSensorChanged(SensorEvent e)
             {
                 lock (syncer)

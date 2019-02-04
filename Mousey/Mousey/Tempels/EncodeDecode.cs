@@ -13,7 +13,7 @@ namespace Mousey
 
         }
 
-        public string decodeNextByte(byte b)
+        public String decodeNextByte(byte b)
         {
             //Doto
             return null;

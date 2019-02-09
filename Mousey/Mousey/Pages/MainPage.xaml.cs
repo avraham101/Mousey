@@ -19,6 +19,7 @@ namespace Mousey
             binder = new MainBinder();
             action_handler = new Active1(binder);
             this.BindingContext = binder;
+            binder.Label = "Nothing";
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace Mousey
             binder.Conn = "Connected";
         }
 
-        private class Active1 : Activity, ISensorEventListener
+        private class Active1 : Activity, ISensorEventListener 
         {
             MainBinder binder;
             Object syncer = new Object(); //locker to synchronzie
@@ -39,8 +40,10 @@ namespace Mousey
                 this.binder = binder;
                 init();
                 _sensorManager = (SensorManager)Android.App.Application.Context.GetSystemService(Context.SensorService);
-                _sensorManager.RegisterListener(this, _sensorManager.GetDefaultSensor(SensorType.Accelerometer)
-                    , SensorDelay.Normal);
+                //_sensorManager.RegisterListener(this, _sensorManager.GetDefaultSensor(SensorType.Accelerometer), SensorDelay.Fastest);
+                //_sensorManager.RegisterListener(this, _sensorManager.GetDefaultSensor(SensorType.), SensorDelay.Fastest);
+                //_sensorManager.RegisterListener(this, _sensorManager.GetDefaultSensor(SensorType.Gyroscope), SensorDelay.Fastest);
+                //_sensorManager.RegisterListener(this, _sensorManager.GetDefaultSensor(SensorType.LinearAcceleration), SensorDelay.Fastest);
             }
 
             private void init()
@@ -56,20 +59,26 @@ namespace Mousey
 
             void ISensorEventListener.OnAccuracyChanged(Sensor sensor, SensorStatus accuracy)
             {
-
             }
 
             //the x
             void ISensorEventListener.OnSensorChanged(SensorEvent e)
             {
-                lock (syncer)
+                switch(e.Sensor.Type)
                 {
-                    if (handler.isConnected())
-                    {
-                        binder.Label = string.Format("x={0:f}, y={1:f}, z={2:f}", (int)e.Values[0], (int)e.Values[1], (int)e.Values[2]);
-                        Pair<double> msg = new Pair<double>(e.Values[0], e.Values[1]);
-                        handler.sendMessage(msg);
-                    }
+                    case SensorType.Accelerometer:
+                    case SensorType.LinearAcceleration:
+                    case SensorType.Gyroscope:
+                        binder.Label = string.Format("x={0:f}, y={1:f}, z={2:f}", e.Values[0], e.Values[1], e.Values[2]);
+                        lock (syncer)
+                        {
+                            if (handler.isConnected())
+                            {
+                                Pair<double> msg = new Pair<double>(e.Values[0], e.Values[1]);
+                                handler.sendMessage(msg);
+                            }
+                        }
+                    break;
                 }
             }
         }

@@ -13,8 +13,8 @@ namespace Mousey
         //Properties to what to see
         private String label ="";
         private String net = "";
-        private String ip = "IP";
-        private String port = "Port";
+        private String ip = "10.0.0.16";
+        private String port = "1250";
         private String conn = "Not Connected";
 
         public String Label

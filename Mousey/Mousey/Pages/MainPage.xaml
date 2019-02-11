@@ -5,30 +5,34 @@
              x:Class="Mousey.MainPage">
 
         <!-- Place new controls here -->
-    <Grid RowSpacing="0" ColumnSpacing="1">
+    <Grid RowSpacing="0" ColumnSpacing="1" BackgroundColor="#B3D1F0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!--Label For Knowing the Vector of Movment-->
-        <Label Text="{Binding Label}" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-        <!--The ip port Grid-->
-        <Grid Grid.Row="1" Margin="2,0,2,2">
+        <!--The ip port on Grid-->
+        <Grid Grid.Row="0" Margin="2,2,2,2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Entry Grid.Column="0" Text="{Binding Ip}" HorizontalTextAlignment="Center" BackgroundColor="#66A3E0"/>
-            <Entry Grid.Column="1" Text="{Binding Port}" HorizontalTextAlignment="Center" BackgroundColor="#66A3E0"/>
+            <Frame Grid.Column="0" OutlineColor="#4D94DB" BackgroundColor="Gray" HorizontalOptions="Fill" Padding="1" HasShadow="True">
+                <Entry Text="{Binding Ip}" HorizontalTextAlignment="Center" BackgroundColor="#80B3E6"/>
+            </Frame>
+            <Frame Grid.Column="1" OutlineColor="#4D94DB" BackgroundColor="Gray" HorizontalOptions="Fill" Padding="1" HasShadow="True">
+                <Entry Text="{Binding Port}" HorizontalTextAlignment="Center" BackgroundColor="#80B3E6"/>
+            </Frame>
+            <Frame Grid.Column="2" OutlineColor="Black" BackgroundColor="Gray" HorizontalOptions="Fill" Padding="1" HasShadow="True">
+                <Button Text="{Binding Conn}" BackgroundColor="#4D94DB" Clicked="Button_Clicked"/>
+            </Frame>
         </Grid>
         <!--The actual mouse Grid-->
-        <Frame Grid.Row="2" Margin="2,0,2,2" OutlineColor="Black" BackgroundColor="LightGray" Padding="1" HasShadow="True" CornerRadius="10">
-            <Grid RowSpacing="0">
+        <Frame Grid.Row="1" Margin="4,2,4,4" OutlineColor="Black" BackgroundColor="#EEEEEE" CornerRadius="5" Padding="3" HasShadow="True">
+            <Grid RowSpacing="0" Margin="7,4,7,7">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="7*"/>
                 </Grid.RowDefinitions>
                 <!--The buttons right click,roller,left click-->
                 <Grid Grid.Row="0" ColumnSpacing="0" Margin="2,2,2,0">
@@ -44,32 +48,23 @@
                     <Frame Grid.Column="0" OutlineColor="Black" BackgroundColor="Gray" Padding="3" HasShadow="True" CornerRadius="10">
                         <Button BackgroundColor="Gray"/>
                     </Frame>
-                    <!--Roller-->
-                    <Grid Grid.Column="1" BackgroundColor="LightGray" Margin="2,0,2,0" RowSpacing="1">
+                    <!--Roller and Dot-->
+                    <Grid Grid.Column="1" BackgroundColor="Transparent" Margin="2,0,2,0" RowSpacing="1">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="1*"/> <!--Dot-->
+                            <RowDefinition Height="5*"/> <!--Roller-->
                         </Grid.RowDefinitions>
-                        <Button Grid.Row="0" BackgroundColor="DarkGray"/>
-                        <Button Grid.Row="1" BackgroundColor="DarkGray"/>
+                        <local:Circle Grid.Row="0" BackgroundColor="{Binding DotColor}"/>
+                        <local:Roller Grid.Row="1" BackgroundColor="Gray"/>
                     </Grid>
                     <!--Right-->
                     <Frame Grid.Column="2" OutlineColor="Black" BackgroundColor="Gray" Padding="1" HasShadow="True" CornerRadius="10">
                         <Button BackgroundColor="Gray"/>
                     </Frame>
                 </Grid>
-                <local:MovingSensor x:Name="MoveGrid" Grid.Row="1" BackgroundColor="LightGray"/>
-                <!--The On button-->
-                <Grid Grid.Row="2" BackgroundColor="LightGray">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Frame Grid.Row="0" OutlineColor="Black" BackgroundColor="Gray" HorizontalOptions="Center" Padding="1" HasShadow="True">
-                        <Button Text="On" BackgroundColor="#4D94DB" Clicked="Button_Clicked"/>
-                    </Frame>
-                    <Label Text="{Binding Conn}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-                </Grid>
+                <Frame Grid.Row="1" OutlineColor="#E3E3E3" HorizontalOptions="Fill" Padding="1" Margin="0,2,0,2"  CornerRadius="5" HasShadow="True">
+                    <local:MovingSensor x:Name="MoveGrid" BackgroundColor="#EEEEEE" />
+                </Frame>
             </Grid>
         </Frame>
     </Grid>

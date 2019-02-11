@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.Graphics;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Mousey;
+using Mousey.Droid;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+
+[assembly: ExportRenderer(typeof(ExtraFrame), typeof(ExtraFrameRender))]
+namespace Mousey.Droid
+{
+    public class ExtraFrameRender : FrameRenderer
+    {
+        private ExtraFrame frame = null;
+        public ExtraFrameRender(Context context) : base(context)
+        {
+        }
+
+        protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
+        {
+            base.OnElementChanged(e);
+            if (e.NewElement != null)
+            {
+                frame = (e.NewElement as ExtraFrame);
+            }
+        }
+
+        public override void Draw(Canvas canvas)
+        {
+            var p = new Paint();
+            var backp = new Paint();
+
+            p.AntiAlias = true;
+            p.SetStyle(Paint.Style.Stroke);
+            p.StrokeWidth = 5;
+            p.Color = Android.Graphics.Color.Black;
+            
+            backp.SetStyle(Paint.Style.Fill);
+            backp.StrokeWidth = 4;
+            backp.SetARGB(255, 238, 238, 238);
+
+            Rect oldBounds = new Rect();
+            canvas.GetClipBounds(oldBounds);
+            
+            RectF myOutlineBounds = new RectF();
+            myOutlineBounds.Set(oldBounds);
+
+            canvas.DrawRoundRect(myOutlineBounds, 50, 100, p);
+            canvas.DrawRoundRect(myOutlineBounds, 50, 100, backp);
+            base.Draw(canvas);
+        }
+    }
+}

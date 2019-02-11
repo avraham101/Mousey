@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Mousey
 {
@@ -15,8 +16,8 @@ namespace Mousey
         private String net = "";
         private String ip = "10.0.0.16";
         private String port = "1250";
-        private String conn = "Not Connected";
-
+        private String conn = "On";
+        private Color dotcolor = Color.FromHex("#FC0000");
         public String Label
         {
             get { return label; }
@@ -69,6 +70,18 @@ namespace Mousey
             {
                 conn = value;
                 OnPropertyChanged("Conn");
+            }
+        }
+        public Color DotColor
+        {
+            get
+            {
+                return dotcolor;
+            }
+            set
+            {
+                dotcolor = value;
+                OnPropertyChanged("DotColor");
             }
         }
         public MainBinder()

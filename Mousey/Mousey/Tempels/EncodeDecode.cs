@@ -25,7 +25,7 @@ namespace Mousey
             return null;
         }
 
-        public byte[] encode(Pair<double> p)
+        public byte[] encode(Pair<float> p)
         {
             String msg = p.getFirst() + "f" + p.getSecond() + "s"; 
             return Encoding.ASCII.GetBytes(msg);

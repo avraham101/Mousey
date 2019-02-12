@@ -13,8 +13,6 @@ namespace Mousey
         private Boolean connected;
         private EncodeDecode encoder;
         private TcpClient client;
-        //maybe in the future i want it to be in 2 threads, meanwhile its 1 thread to the client
-        public Queue<String> messagesToSend; 
 
         public ConnectionHandler(String url,int port)
         {
@@ -38,7 +36,11 @@ namespace Mousey
             }
         }
 
-        public void sendMessage(Pair<double> msg)
+        public void CloseConnection(){
+
+        }
+
+        public void sendMessage(Pair<float> msg)
         {
             if (isConnected())
             {

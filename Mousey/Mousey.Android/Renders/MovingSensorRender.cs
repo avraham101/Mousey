@@ -46,8 +46,8 @@ namespace Mousey.Droid
             {
                 if (firstTouch)
                 {
-                    sensor.X = e.GetX();
-                    sensor.Y = e.GetY();
+                    sensor.AddPoint(e.GetX(), e.GetY());
+                    sensor.AddVector(DirX, DirY);
                     sensor.Text = DirX + " " + DirY;
                     firstTouch = false;
                 }
@@ -55,9 +55,9 @@ namespace Mousey.Droid
                 {
                     dir_x = sensor.X - e.GetX();
                     dir_y = sensor.Y - e.GetY();
-                    sensor.X = e.GetX();
-                    sensor.Y = e.GetY();
-                    sensor.Text = DirX+ " " + DirY;
+                    sensor.AddPoint(e.GetX(), e.GetY());
+                    sensor.AddVector(DirX, DirY);
+                    sensor.Text = DirX + " " + DirY;
                 }
                 return true;
             }
@@ -73,9 +73,8 @@ namespace Mousey.Droid
         {
             base.OnElementChanged(e);
             if(e.NewElement!=null)
-            {
                 sensor = (e.NewElement as MovingSensor);
-            } 
+             
         }
 
         protected void ChangeColor()

@@ -27,22 +27,36 @@ namespace Mousey
             if (binder.Conn == "On")
             {
                 handler.changeCon(binder.Ip, Int32.Parse(binder.Port));
-                //handler.StartConnection();
+                handler.StartConnection();
                 binder.Conn = "Off";
                 binder.DotColor = Color.FromHex("#27FC3E");
             }
             else
             {
-                //handler.closeConnection();
+                handler.CloseConnection();
                 binder.Conn = "On";
                 binder.DotColor = Color.FromHex("#FC0000");
             }
+           
+        }
+
+        private void SendData()
+        {
             //send data
             /*if (handler.isConnected())
             {
                 Pair<double> msg = new Pair<double>(e.Values[0], e.Values[1]);
                 handler.sendMessage(msg);
             }*/
+            while (true)
+            {
+                if(handler!=null & handler.isConnected())
+                {
+                    Pair<float> p = MoveGrid.GetVector();
+                    if (p != null)
+                        handler.sendMessage(p);
+                }
+            }
         }
     }
 }

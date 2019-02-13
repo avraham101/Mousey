@@ -1,17 +1,13 @@
-﻿using Android.Content;
-using Android.Hardware;
-using System;
+﻿using System;
 using Xamarin.Forms;
-using Android.App;
-using System.Net.Sockets;
-using System.IO;
-
+using System.Threading;
 namespace Mousey
 {
     public partial class MainPage : ContentPage
     {
         MainBinder binder;
         ConnectionHandler handler;
+        Thread sendTask;
 
         public MainPage()
         {
@@ -20,6 +16,7 @@ namespace Mousey
             handler = new ConnectionHandler("", -1);
             this.BindingContext = binder;
             binder.Label = "Nothing";
+            sendTask = new Thread(SendData);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -28,6 +25,7 @@ namespace Mousey
             {
                 handler.changeCon(binder.Ip, Int32.Parse(binder.Port));
                 handler.StartConnection();
+                sendTask.Start();
                 binder.Conn = "Off";
                 binder.DotColor = Color.FromHex("#27FC3E");
             }
@@ -42,20 +40,29 @@ namespace Mousey
 
         private void SendData()
         {
-            //send data
-            /*if (handler.isConnected())
+            while (handler.isConnected())
             {
-                Pair<double> msg = new Pair<double>(e.Values[0], e.Values[1]);
-                handler.sendMessage(msg);
-            }*/
-            while (true)
+                Pair<float> p = MoveGrid.GetVector();
+                if (p != null)
+                    handler.sendMessage(p);
+            }
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            if (sender != null)
             {
-                if(handler!=null & handler.isConnected())
-                {
-                    Pair<float> p = MoveGrid.GetVector();
-                    if (p != null)
-                        handler.sendMessage(p);
-                }
+                handler.sendMessage(Message.LeftClick);
+                var b = sender as Button;
+            }
+        }
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            if (sender != null)
+            {
+                handler.sendMessage(Message.RightClick);
+                var b = sender as Button;
             }
         }
     }

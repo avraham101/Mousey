@@ -6,7 +6,7 @@ namespace Mousey
 {
     class EncodeDecode
     {
-        //Need to make this ninterface
+        private static char end_message_byte = 'e';
 
         public EncodeDecode()
         {
@@ -27,8 +27,27 @@ namespace Mousey
 
         public byte[] encode(Pair<float> p)
         {
-            String msg = p.getFirst() + "f" + p.getSecond() + "s"; 
+            String msg = "m" + p.getFirst() + "f" + p.getSecond() + end_message_byte; 
             return Encoding.ASCII.GetBytes(msg);
+        }
+
+        public byte[] encode(Message t)
+        {
+            byte[] arr = new byte[2];
+            arr[0] = (byte)encodeByte(t);
+            arr[1] = (byte)end_message_byte;
+            return arr;
+        }
+
+        public char encodeByte(Message t)
+        {
+            switch(t)
+            {
+                case Message.LeftClick: return 'l';
+                case Message.RightClick: return 'r';
+                case Message.Movment: return 'm';
+            }
+            return 'n';
         }
     }
 }

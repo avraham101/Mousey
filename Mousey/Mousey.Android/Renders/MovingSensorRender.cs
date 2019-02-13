@@ -48,7 +48,7 @@ namespace Mousey.Droid
                 {
                     sensor.AddPoint(e.GetX(), e.GetY());
                     sensor.AddVector(DirX, DirY);
-                    sensor.Text = DirX + " " + DirY;
+                    //sensor.Text = DirX + " " + DirY;
                     firstTouch = false;
                 }
                 else
@@ -57,7 +57,7 @@ namespace Mousey.Droid
                     dir_y = sensor.Y - e.GetY();
                     sensor.AddPoint(e.GetX(), e.GetY());
                     sensor.AddVector(DirX, DirY);
-                    sensor.Text = DirX + " " + DirY;
+                    //sensor.Text = DirX + " " + DirY;
                 }
                 return true;
             }

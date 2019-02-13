@@ -14,7 +14,7 @@ namespace Mousey
         //Properties to what to see
         private String label ="";
         private String net = "";
-        private String ip = "10.0.0.16";
+        private String ip = "192.168.14.135";//"10.0.0.16";
         private String port = "1250";
         private String conn = "On";
         private Color dotcolor = Color.FromHex("#FC0000");

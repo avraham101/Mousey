@@ -13,8 +13,8 @@
         <!--The ip port on Grid-->
         <Grid Grid.Row="0" Margin="2,2,2,2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Frame Grid.Column="0" OutlineColor="#4D94DB" BackgroundColor="Gray" HorizontalOptions="Fill" Padding="1" HasShadow="True">
@@ -46,7 +46,7 @@
                     </Grid.ColumnDefinitions>
                     <!--Left-->
                     <Frame Grid.Column="0" OutlineColor="Black" BackgroundColor="Gray" Padding="3" HasShadow="True" CornerRadius="10">
-                        <Button BackgroundColor="Gray"/>
+                        <Button BackgroundColor="Gray" Clicked="Button_Clicked_1"/>
                     </Frame>
                     <!--Roller and Dot-->
                     <Grid Grid.Column="1" BackgroundColor="Transparent" Margin="2,0,2,0" RowSpacing="1">
@@ -59,11 +59,11 @@
                     </Grid>
                     <!--Right-->
                     <Frame Grid.Column="2" OutlineColor="Black" BackgroundColor="Gray" Padding="1" HasShadow="True" CornerRadius="10">
-                        <Button BackgroundColor="Gray"/>
+                        <Button BackgroundColor="Gray" Clicked="Button_Clicked_2"/>
                     </Frame>
                 </Grid>
                 <Frame Grid.Row="1" OutlineColor="#E3E3E3" HorizontalOptions="Fill" Padding="1" Margin="0,2,0,2"  CornerRadius="5" HasShadow="True">
-                    <local:MovingSensor x:Name="MoveGrid" BackgroundColor="#EEEEEE" />
+                    <local:MovingSensor x:Name="MoveGrid" BackgroundColor="#D5D5D5" />
                 </Frame>
             </Grid>
         </Frame>

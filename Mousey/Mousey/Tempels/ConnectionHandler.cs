@@ -13,6 +13,7 @@ namespace Mousey
         private Boolean connected;
         private EncodeDecode encoder;
         private TcpClient client;
+        private Object tasksync = new object();
 
         public ConnectionHandler(String url,int port)
         {
@@ -23,6 +24,7 @@ namespace Mousey
             client = null;
         }
 
+        //start the conection handler. Open socket
         public void StartConnection()
         {
             try
@@ -36,29 +38,57 @@ namespace Mousey
             }
         }
 
+        //change the connected value
         public void CloseConnection(){
-
+            if (connected)
+                connected = false;
         }
 
+        //Movment Change send to the server
         public void sendMessage(Pair<float> msg)
         {
-            if (isConnected())
+
+            lock (tasksync)
             {
-                byte[] arr = encoder.encode(msg);
-                try
+                if (isConnected())
                 {
-                    Stream streamer = client.GetStream();
-                    streamer.Write(arr, 0, arr.Length);
-                    streamer.Flush();
-                }
-                catch (Exception e)
-                {
-                    //Do nothing yet
-                    //in the future need to be her logger
+                    byte[] arr = encoder.encode(msg);
+                    sendMessage(arr);
                 }
             }
         }
 
+        //Right Click or Left Click send to the server
+        public void sendMessage(Message t)
+        {
+
+            lock (tasksync)
+            {
+                if (isConnected())
+                {
+                    byte[] arr = encoder.encode(t);
+                    sendMessage(arr);
+                }
+            }
+        }
+
+        //help function send data to the server
+        private void sendMessage(byte[] arr)
+        {
+            try
+            {
+                Stream streamer = client.GetStream();
+                streamer.Write(arr, 0, arr.Length);
+                streamer.Flush();
+            }
+            catch (Exception e)
+            {
+                //Do nothing yet
+                //in the future need to be her logger
+            }
+        }
+
+        //Not Yet Implemented
         public void reciveMessage()
         {
             //Not Yet Needed
@@ -68,11 +98,13 @@ namespace Mousey
             }
         }
 
+        //check if the connection handler connected
         public Boolean isConnected()
         {
             return connected;
         }
 
+        //change the connection with spasific port and url
         public void changeCon(String url,int port)
         {
             this.url = url;

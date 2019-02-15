@@ -46,7 +46,8 @@
                     </Grid.ColumnDefinitions>
                     <!--Left-->
                     <Frame Grid.Column="0" OutlineColor="Black" BackgroundColor="Gray" Padding="3" HasShadow="True" CornerRadius="10">
-                        <Button BackgroundColor="Gray" Clicked="Button_Clicked_1"/>
+                        <!--Button BackgroundColor="Gray" Clicked="Button_Clicked_1"/-->
+                        <local:LeftButton x:Name="MouseLeftButton" BackgroundColor="Gray" />
                     </Frame>
                     <!--Roller and Dot-->
                     <Grid Grid.Column="1" BackgroundColor="Transparent" Margin="2,0,2,0" RowSpacing="1">

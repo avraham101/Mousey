@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mousey
 {
-    class ConnectionHandler
+    public class ConnectionHandler
     {
         private String url;
         private int port;

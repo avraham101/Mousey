@@ -33,21 +33,29 @@ namespace Mousey
 
         public byte[] encode(Message t)
         {
-            byte[] arr = new byte[2];
-            arr[0] = (byte)encodeByte(t);
-            arr[1] = (byte)end_message_byte;
+            byte[] arr = new byte[3];
+            switch(t)
+            {
+                case Message.LeftClickDown:
+                    arr[0] = (byte)'l';
+                    arr[1] = (byte)'d';
+                        break;
+                case Message.LeftClickUp:
+                    arr[0] = (byte)'l';
+                    arr[1] = (byte)'u';
+                    break;
+                case Message.RightClickDown:
+                    arr[0] = (byte)'r';
+                    arr[1] = (byte)'d';
+                    break;
+                case Message.RightClickUp:
+                    arr[0] = (byte)'r';
+                    arr[1] = (byte)'u';
+                    break;
+            }
+            arr[2] = (byte)end_message_byte;
             return arr;
         }
 
-        public char encodeByte(Message t)
-        {
-            switch(t)
-            {
-                case Message.LeftClick: return 'l';
-                case Message.RightClick: return 'r';
-                case Message.Movment: return 'm';
-            }
-            return 'n';
-        }
     }
 }

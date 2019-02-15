@@ -10,7 +10,6 @@ using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using Mousey;
 using Mousey.Droid;
 using Xamarin.Forms;
@@ -20,7 +19,7 @@ using static Android.Views.View;
 [assembly: ExportRenderer(typeof(Roller), typeof(RollerRender))]
 namespace Mousey.Droid
 {
-    public class RollerRender: BoxRenderer
+    public class RollerRender: ButtonRenderer
     {
         private Roller roller;
         private float touch_y = 0;
@@ -30,7 +29,7 @@ namespace Mousey.Droid
             
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<BoxView> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {
             base.OnElementChanged(e);
             if(roller == null) 
@@ -45,16 +44,9 @@ namespace Mousey.Droid
 
         public override bool OnInterceptTouchEvent(MotionEvent e)
         {
-            if (e.ActionMasked == MotionEventActions.Move || e.ActionMasked == MotionEventActions.Down)
+            if (e.ActionMasked == MotionEventActions.Down)
             {
-                touch_y = e.GetY();
-                Invalidate();
-                return true;
-            }
-            if (e.ActionMasked == MotionEventActions.Up)
-            {
-                touch_y = 0;
-                Invalidate();
+                Parent.RequestDisallowInterceptTouchEvent(true);
                 return true;
             }
             return false;
@@ -77,7 +69,7 @@ namespace Mousey.Droid
             return false;
         }
 
-        public override void Draw(Canvas canvas)
+        protected override bool DrawChild(Canvas canvas, Android.Views.View child, long drawingTime)
         {
             if(roller!=null)
             {
@@ -96,6 +88,7 @@ namespace Mousey.Droid
                 DrawCircle(canvas, bounds.CenterX(), bounds.CenterY(), mx, my, backp);
                 DrawCircle(canvas, bounds.CenterX(), bounds.CenterY(), mx, my, p);
             }
+            return true;
         }
         
         private Paint createPaint(int width,bool StyleFillorStroke, Xamarin.Forms.Color color)

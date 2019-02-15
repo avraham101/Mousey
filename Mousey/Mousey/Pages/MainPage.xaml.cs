@@ -17,6 +17,8 @@ namespace Mousey
             this.BindingContext = binder;
             binder.Label = "Nothing";
             sendTask = new Thread(SendData);
+            //Mouse Buttons
+            MouseLeftButton.SetHandler(handler);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -52,8 +54,8 @@ namespace Mousey
         {
             if (sender != null)
             {
-                handler.sendMessage(Message.LeftClick);
-                var b = sender as Button;
+                handler.sendMessage(Message.LeftClickDown);
+                handler.sendMessage(Message.LeftClickUp);
             }
         }
 
@@ -61,8 +63,8 @@ namespace Mousey
         {
             if (sender != null)
             {
-                handler.sendMessage(Message.RightClick);
-                var b = sender as Button;
+                handler.sendMessage(Message.RightClickDown);
+                handler.sendMessage(Message.RightClickUp);
             }
         }
     }

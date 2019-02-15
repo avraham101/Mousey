@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Mousey
 {
-    public class Roller: BoxView 
+    public class Roller: Button 
     {
         private String dir = "None";
         public String Dir

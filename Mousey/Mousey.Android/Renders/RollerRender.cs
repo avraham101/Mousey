@@ -34,11 +34,6 @@ namespace Mousey.Droid
             base.OnElementChanged(e);
             if(roller == null) 
                 roller = e.NewElement as Roller;
-        }
-
-        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            base.OnElementPropertyChanged(sender, e);
             Invalidate();
         }
 
@@ -54,22 +49,20 @@ namespace Mousey.Droid
 
         public override bool OnTouchEvent(MotionEvent e)
         {
-            if (e.ActionMasked == MotionEventActions.Move || e.ActionMasked == MotionEventActions.Down)
+            if (e.ActionMasked == MotionEventActions.Down)
             {
                 touch_y = e.GetY();
-                Invalidate();
+                //ChangeColor();
                 return true;
             }
             if (e.ActionMasked == MotionEventActions.Up)
             {
-                touch_y = 0;
-                Invalidate();
                 return true;
             }
             return false;
         }
 
-        protected override bool DrawChild(Canvas canvas, Android.Views.View child, long drawingTime)
+        /*protected override bool DrawChild(Canvas canvas, Android.Views.View child, long drawingTime)
         {
             if(roller!=null)
             {
@@ -83,14 +76,17 @@ namespace Mousey.Droid
                 if (touch_y!=0)
                 {
                     if (touch_y < bounds.Top & touch_y > bounds.Bottom)
+                    {
                         my = touch_y;
+                        roller.Text = "Here";
+                    }
                 }
                 DrawCircle(canvas, bounds.CenterX(), bounds.CenterY(), mx, my, backp);
                 DrawCircle(canvas, bounds.CenterX(), bounds.CenterY(), mx, my, p);
             }
             return true;
-        }
-        
+        }*/
+
         private Paint createPaint(int width,bool StyleFillorStroke, Xamarin.Forms.Color color)
         {
             Paint p = new Paint();
@@ -110,5 +106,11 @@ namespace Mousey.Droid
             else
                 c.DrawCircle(mx, my, ry, p);
         }
+
+        protected void ChangeColor()
+        {
+            Control.SetBackgroundColor(global::Android.Graphics.Color.Red);
+        }
+
     }
 }

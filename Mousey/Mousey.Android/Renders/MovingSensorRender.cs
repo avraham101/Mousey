@@ -14,6 +14,7 @@ namespace Mousey.Droid
     public class MovingSensorRender : ButtonRenderer
     {
         private MovingSensor sensor;
+        private Color back;
         private bool firstTouch = true;
         private float dir_x = 0;
         private float dir_y = 0;
@@ -46,6 +47,8 @@ namespace Mousey.Droid
             {
                 if (firstTouch)
                 {
+                    Color newc = new Color(back.R - 0.1, back.G - 0.1, back.B - 0.1);
+                    sensor.BackgroundColor = newc;
                     sensor.AddPoint(e.GetX(), e.GetY());
                     sensor.AddVector(DirX, DirY);
                     //sensor.Text = DirX + " " + DirY;
@@ -64,6 +67,7 @@ namespace Mousey.Droid
             if (e.ActionMasked == MotionEventActions.Up)
             {
                 firstTouch = true;
+                sensor.BackgroundColor = back;
                 return true;
             }
             return false;
@@ -72,14 +76,12 @@ namespace Mousey.Droid
         protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {
             base.OnElementChanged(e);
-            if(e.NewElement!=null)
+            if (e.NewElement != null)
+            {
                 sensor = (e.NewElement as MovingSensor);
+                back = sensor.BackgroundColor;
+            }
              
-        }
-
-        protected void ChangeColor()
-        {
-            Control.SetBackgroundColor(global::Android.Graphics.Color.Red);
         }
 
     }

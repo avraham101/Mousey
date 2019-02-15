@@ -42,6 +42,7 @@ namespace Mousey
         public void CloseConnection(){
             if (connected)
                 connected = false;
+            client.Close();
         }
 
         //Movment Change send to the server

@@ -45,27 +45,28 @@
                         <!--Right-->
                     </Grid.ColumnDefinitions>
                     <!--Left-->
-                    <Frame Grid.Column="0" OutlineColor="Black" BackgroundColor="Gray" Padding="3" HasShadow="True" CornerRadius="10">
+                    <Frame Grid.Column="0" OutlineColor="Black" BackgroundColor="Gray" Padding="1" HasShadow="True" CornerRadius="10">
                         <!--Button BackgroundColor="Gray" Clicked="Button_Clicked_1"/-->
-                        <local:LeftButton x:Name="MouseLeftButton" BackgroundColor="Gray" />
+                        <local:LeftButton x:Name="MouseLeftButton" BackgroundColor="Gray" CornerRadius="10"/>
                     </Frame>
                     <!--Roller and Dot-->
-                    <Grid Grid.Column="1" BackgroundColor="Transparent" Margin="2,0,2,0" RowSpacing="1">
+                    <Grid Grid.Column="1" BackgroundColor="Transparent" RowSpacing="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/> <!--Dot-->
                             <RowDefinition Height="5*"/> <!--Roller-->
                         </Grid.RowDefinitions>
-                        <local:Circle Grid.Row="0" BackgroundColor="{Binding DotColor}"/>
-                        <local:Roller Grid.Row="1" BackgroundColor="Gray"/>
+                        <local:Circle Grid.Row="0" BackgroundColor="{Binding DotColor}" Margin="3,0,3,0"/>
+                        <local:Roller Grid.Row="1" BackgroundColor="Gray" CornerRadius="30" Margin="2,0,2,0"/>
                     </Grid>
                     <!--Right-->
                     <Frame Grid.Column="2" OutlineColor="Black" BackgroundColor="Gray" Padding="1" HasShadow="True" CornerRadius="10">
-                        <Button BackgroundColor="Gray" Clicked="Button_Clicked_2"/>
+                        <Button BackgroundColor="Gray" Clicked="Button_Clicked_2" CornerRadius="10"/>
                     </Frame>
                 </Grid>
-                <Frame Grid.Row="1" OutlineColor="#E3E3E3" HorizontalOptions="Fill" Padding="1" Margin="0,2,0,2"  CornerRadius="5" HasShadow="True">
-                    <local:MovingSensor x:Name="MoveGrid" BackgroundColor="#D5D5D5" />
+                <Frame Grid.Row="1" Margin="0,5,0,0" OutlineColor="#D9D9D9" BackgroundColor="#DDDDDD" HorizontalOptions="Fill" Padding="1.5" CornerRadius="5" HasShadow="True">
+                    <local:MovingSensor x:Name="MoveGrid" BackgroundColor="#D5D5D5" CornerRadius="5"/>
                 </Frame>
+                <!--  -->
             </Grid>
         </Frame>
     </Grid>

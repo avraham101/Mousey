@@ -40,15 +40,19 @@ namespace Mousey
 
         //change the connected value
         public void CloseConnection(){
-            if (connected)
-                connected = false;
-            client.Close();
+            lock (tasksync)
+            {
+                sendMessage(Message.Logout);
+                if (connected)
+                    connected = false;
+                client.Close();
+                client.Dispose();
+            }
         }
 
         //Movment Change send to the server
         public void sendMessage(Pair<float> msg)
         {
-
             lock (tasksync)
             {
                 if (isConnected())

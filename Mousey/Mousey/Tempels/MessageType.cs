@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mousey
 {
-    public enum Message { Movment, RightClickUp, RightClickDown, LeftClickUp, LeftClickDown, None }
+    public enum Message { Movment, RightClickUp, RightClickDown, LeftClickUp, LeftClickDown, None, Logout }
     /*
     switch(t)
         {

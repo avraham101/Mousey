@@ -7,11 +7,12 @@ namespace Mousey
 {
     public partial class App : Application
     {
+        MainPage main;
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            main = new MainPage();
+            MainPage = main;
         }
 
         protected override void OnStart()
@@ -21,12 +22,18 @@ namespace Mousey
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            if(main!=null)
+            {
+                main.Close();
+            }
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+            if (main != null)
+            {
+                main.Close();
+            }
         }
     }
 }

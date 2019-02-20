@@ -52,6 +52,11 @@ namespace Mousey
                     arr[0] = (byte)'r';
                     arr[1] = (byte)'u';
                     break;
+                case Message.Logout:
+                    arr = new byte[2];
+                    arr[0] = (byte)'o';
+                    arr[1] = (byte)end_message_byte;
+                    return arr;
             }
             arr[2] = (byte)end_message_byte;
             return arr;

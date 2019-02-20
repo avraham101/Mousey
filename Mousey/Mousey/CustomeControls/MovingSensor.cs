@@ -69,7 +69,17 @@ namespace Mousey
                 return null;
             }
         }
-
+        public void reset()
+        {
+            lock(pointSync)
+            {
+                pointQueue = new Queue<Pair<float>>();
+            }
+            lock(vectorSync)
+            {
+                vectorQueue = new Queue<Pair<float>>();
+            }
+        }
 
     }
 }

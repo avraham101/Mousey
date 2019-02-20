@@ -21,10 +21,16 @@ namespace Mousey
             MouseLeftButton.SetHandler(handler);
         }
 
+        public void Close()
+        {
+            handler.CloseConnection();
+        }
+
         private void Button_Clicked(object sender, EventArgs e)
         {
             if (binder.Conn == "On")
             {
+                MoveGrid.reset();
                 handler.changeCon(binder.Ip, Int32.Parse(binder.Port));
                 handler.StartConnection();
                 sendTask.Start();
@@ -34,6 +40,8 @@ namespace Mousey
             else
             {
                 handler.CloseConnection();
+                sendTask.Abort();
+                sendTask = new Thread(SendData);
                 binder.Conn = "On";
                 binder.DotColor = Color.FromHex("#FC0000");
             }
@@ -42,11 +50,18 @@ namespace Mousey
 
         private void SendData()
         {
-            while (handler.isConnected())
+            try
             {
-                Pair<float> p = MoveGrid.GetVector();
-                if (p != null)
-                    handler.sendMessage(p);
+                while (handler.isConnected())
+                {
+                    Pair<float> p = MoveGrid.GetVector();
+                    if (p != null)
+                        handler.sendMessage(p);
+                }
+            }
+            catch(Exception e)
+            {
+
             }
         }
 

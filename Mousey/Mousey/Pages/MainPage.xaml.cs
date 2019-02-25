@@ -25,7 +25,7 @@ namespace Mousey
         {
             handler.CloseConnection();
         }
-
+        //On Button Click
         private void Button_Clicked(object sender, EventArgs e)
         {
             if (binder.Conn == "On")
@@ -64,7 +64,8 @@ namespace Mousey
 
             }
         }
-
+        
+        //Mouse Click Left
         private void Button_Clicked_1(object sender, EventArgs e)
         {
             if (sender != null)
@@ -73,13 +74,23 @@ namespace Mousey
                 handler.sendMessage(Message.LeftClickUp);
             }
         }
-
+        
+        //Mouse Click Right
         private void Button_Clicked_2(object sender, EventArgs e)
         {
             if (sender != null)
             {
                 handler.sendMessage(Message.RightClickDown);
                 handler.sendMessage(Message.RightClickUp);
+            }
+        }
+        
+        //Change KeyBoard Mouse Click
+        private void Button_Clicked_3(object sender, EventArgs e)
+        {
+            if (sender != null)
+            {
+                binder.MouseOn = !binder.MouseOn;
             }
         }
     }

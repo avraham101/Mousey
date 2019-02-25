@@ -18,6 +18,7 @@ namespace Mousey
         private String port = "1250";
         private String conn = "On";
         private Color dotcolor = Color.FromHex("#FC0000");
+        private Boolean mouseOn = true; //if mouse on = false means show keyboard else show mouse
         public String Label
         {
             get { return label; }
@@ -82,6 +83,44 @@ namespace Mousey
             {
                 dotcolor = value;
                 OnPropertyChanged("DotColor");
+            }
+        }
+        public Boolean MouseOn
+        {
+            get
+            {
+                return mouseOn;
+            }
+            set
+            {
+                mouseOn = value;
+                OnPropertyChanged("MouseOn");
+                OnPropertyChanged("KeyBoardOn");
+                OnPropertyChanged("FetureText");
+            }
+        }
+        public Boolean KeyBoardOn
+        {
+            get
+            {
+                return !mouseOn;
+            }
+            set
+            {
+                mouseOn = !value;
+                OnPropertyChanged("MouseOn");
+                OnPropertyChanged("KeyBoardOn");
+                OnPropertyChanged("FetureText");
+            }
+        }
+        public String FetureText
+        {
+            set { }
+            get
+            {
+                if (MouseOn)
+                    return "KeyBoard";
+                return "Mouse"; 
             }
         }
         public MainBinder()

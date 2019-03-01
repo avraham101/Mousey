@@ -61,6 +61,7 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Renders\Button2TextsRender.cs" />
     <Compile Include="Renders\CircleRender.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renders\LeftButtonRender.cs" />

@@ -42,11 +42,13 @@ namespace Mousey
         public void CloseConnection(){
             lock (tasksync)
             {
-                sendMessage(Message.Logout);
                 if (connected)
+                {
+                    sendMessage(Message.Logout);
                     connected = false;
-                client.Close();
-                client.Dispose();
+                    client.Close();
+                    client.Dispose();
+                }
             }
         }
 

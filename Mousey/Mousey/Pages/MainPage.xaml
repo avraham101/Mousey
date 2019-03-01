@@ -73,8 +73,61 @@
         </Frame>
         <!--The actual Key Board Grid-->
         <Frame IsVisible="{Binding KeyBoardOn}" Grid.Row="1" Margin="4,2,4,4" OutlineColor="Black" BackgroundColor="#EEEEEE" CornerRadius="5" Padding="3" HasShadow="True">
-            <Grid RowSpacing="0" Margin="7,4,7,7">
-
+            <Grid RowSpacing="0" Margin="0,7,0,7" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <!--Numbers Row-->
+                <Grid Grid.Row="1" ColumnSpacing="0">
+                    <!--13 columns-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/> <!--0-->
+                        <ColumnDefinition Width="*"/> <!--1-->
+                        <ColumnDefinition Width="*"/> <!--2-->
+                        <ColumnDefinition Width="*"/> <!--3-->
+                        <ColumnDefinition Width="*"/> <!--4-->
+                        <ColumnDefinition Width="*"/> <!--5-->
+                        <ColumnDefinition Width="*"/> <!--6-->
+                        <ColumnDefinition Width="*"/> <!--7-->
+                        <ColumnDefinition Width="*"/> <!--8-->
+                        <ColumnDefinition Width="*"/> <!--9-->
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="0" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="0" Text2=")" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="1" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="1" Text2="!" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="2" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <Button Text="2" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="3" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <Button Text="3" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="4" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <Button Text="4" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="5" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <Button Text="5" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="6" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <Button Text="6" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="7" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <Button Text="7" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="8" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <Button Text="8" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                    <Frame Grid.Column="9" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <Button Text="9" Margin="0,0,0,0" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                    </Frame>
+                </Grid>
             </Grid>
         </Frame>
         <Button Grid.Row="2" Text="{Binding FetureText}" BackgroundColor="#4D94DB" Clicked="Button_Clicked_3"/>

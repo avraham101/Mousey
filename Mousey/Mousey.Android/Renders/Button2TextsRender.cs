@@ -68,24 +68,30 @@ namespace Mousey.Droid
         {
             //base.DispatchDraw(canvas);
             if (button != null) {
+                //define the paint
                 var p = new Paint();
-                Rect rect = new Rect();
                 p.StrokeWidth = 1;
-
                 p.AntiAlias = true;
                 p.SetStyle(Paint.Style.Fill);
-                p.TextSize = 35;
                 System.Drawing.Color c = button.BackgroundColor;
                 p.SetARGB(255, c.R, c.G, c.B);
-                
+                //define the place
+                Rect rect = new Rect();
                 canvas.GetClipBounds(rect);
+                //draw back ground
                 canvas.DrawRoundRect(new RectF(rect), button.CornerRadius, button.CornerRadius, p);
-                p.Color = Android.Graphics.Color.Blue;
-                canvas.DrawText(button.Text2, rect.Left + 5, rect.Top + 40, p);
-                p.Color = Android.Graphics.Color.Black;
-                p.TextSize = 42;
-                canvas.DrawText(button.Text, rect.Left - 26 * button.Text.Length + rect.Width(), rect.Bottom - 10, p);
-
+                //change paint to 2 design
+                c = button.TextColor2;
+                p.SetARGB(255, c.R, c.G, c.B);
+                p.TextSize = (int)button.TextSize2;
+                //draw 2 text
+                canvas.DrawText(button.Text2, rect.Left + 5, rect.Top + p.TextSize, p);
+                //change paint to 1 design
+                c = button.TextColor;
+                p.SetARGB(255, c.R, c.G, c.B);
+                p.TextSize = (int)button.TextSize;
+                //draw main text
+                canvas.DrawText(button.Text, rect.Left - (button.TextSize/2) * button.Text.Length + rect.Width() - button.VerticalSpace, rect.Bottom - button.HorizonalSpace, p);
             }
         }
 

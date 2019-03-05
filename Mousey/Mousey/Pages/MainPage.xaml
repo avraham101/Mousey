@@ -84,7 +84,7 @@
                 </Grid.RowDefinitions>
                 <!--Numbers Row-->
                 <Grid Grid.Row="1" ColumnSpacing="0">
-                    <!--13 columns-->
+                    <!--10 columns-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/> <!--0-->
                         <ColumnDefinition Width="*"/> <!--1-->
@@ -98,38 +98,79 @@
                         <ColumnDefinition Width="*"/> <!--9-->
                     </Grid.ColumnDefinitions>
                     <Frame Grid.Column="0" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="1" Text2="!" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="1" Text2="!" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="1" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="2" Text2="@" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="2" Text2="@" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="2" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="3" Text2="#" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="3" Text2="#" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="3" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="4" Text2="$" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="4" Text2="$" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="4" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="5" Text2="%" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="5" Text2="%" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="5" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="6" Text2="^" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="6" Text2="^" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="6" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="7" Text2=";" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="7" Text2=";" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="7" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="8" Text2="*" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="8" Text2="*" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="8" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="9" Text2="(" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="9" Text2="(" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="9" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="0" Text2=")" Margin="1,1,1,1" Padding="1" CornerRadius="5" BackgroundColor="#DDDDDD" />
+                        <local:Button2Texts Text="0" Text2=")" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                 </Grid>
-                <Grid Grid.Row="2">
-                    <local:Button2Texts Text="TEST" Text2="TEST2" BackgroundColor="Green" TextColor="Black"/>
+                <Grid Grid.Row="2" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/> <!--0-->
+                        <ColumnDefinition Width="*"/> <!--1-->
+                        <ColumnDefinition Width="*"/> <!--2-->
+                        <ColumnDefinition Width="*"/> <!--3-->
+                        <ColumnDefinition Width="*"/> <!--4-->
+                        <ColumnDefinition Width="*"/> <!--5-->
+                        <ColumnDefinition Width="*"/> <!--6-->
+                        <ColumnDefinition Width="*"/> <!--7-->
+                        <ColumnDefinition Width="*"/> <!--8-->
+                        <ColumnDefinition Width="*"/> <!--9-->
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="0" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="Q" Text2="/" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" VerticalSpace="8" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="1" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="W" Text2="'" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" VerticalSpace="18" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="2" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="E" Text2="ק" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="3" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="R" Text2="ר" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="4" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="T" Text2="א" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="5" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="Y" Text2="ט" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="6" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="U" Text2="ו" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="7" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="I" Text2="ן" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="8" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="O" Text2="ם" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
+                    <Frame Grid.Column="9" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
+                        <local:Button2Texts Text="P" Text2="פ" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                    </Frame>
                 </Grid>
             </Grid>
         </Frame>

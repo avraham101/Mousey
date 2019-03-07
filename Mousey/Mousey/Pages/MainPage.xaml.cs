@@ -93,5 +93,9 @@ namespace Mousey
                 binder.MouseOn = !binder.MouseOn;
             }
         }
+
+        private void KeyBoard_Clicked(object sender, EventArgs e) {
+
+        }
     }
 }

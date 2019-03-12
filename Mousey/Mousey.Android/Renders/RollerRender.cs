@@ -22,8 +22,9 @@ namespace Mousey.Droid
     public class RollerRender: ButtonRenderer
     {
         private Roller roller;
-        private float touch_y = 0;
-
+        private float middle_y = -1; //middle of the roller
+        private float touch_y = -1; //the position the roller moved
+        private float prev_touch_y = 0; //the pre position of the roller
         public RollerRender(Context t) : base(t)
         {
             
@@ -49,43 +50,52 @@ namespace Mousey.Droid
 
         public override bool OnTouchEvent(MotionEvent e)
         {
-            if (e.ActionMasked == MotionEventActions.Down)
+            if (e.ActionMasked == MotionEventActions.Down || e.ActionMasked == MotionEventActions.Move)
             {
-                touch_y = e.GetY();
-                //ChangeColor();
+                setPostion(e.GetY());
+                Invalidate();
                 return true;
             }
             if (e.ActionMasked == MotionEventActions.Up)
             {
+                resetPosition();
+                Invalidate();
                 return true;
             }
+
             return false;
         }
-
-        /*protected override bool DrawChild(Canvas canvas, Android.Views.View child, long drawingTime)
+        protected override void DispatchDraw(Canvas canvas)
         {
-            if(roller!=null)
+            base.DispatchDraw(canvas);
+            if (roller != null)
             {
-                Paint p = createPaint(2, false, Xamarin.Forms.Color.Black);
-                Paint rollerp = createPaint(2, true, Xamarin.Forms.Color.FromHex("#D0D0D0"));
-                Paint backp = createPaint(4, true, roller.BackgroundColor);
+                Paint p = createPaint(2, true, Xamarin.Forms.Color.FromHex("#D0D0D0"));
+                Paint rollerp = createPaint(2, true, Xamarin.Forms.Color.Gray);//.FromHex("#D0D0D0"));
                 Rect bounds = new Rect();
                 canvas.GetClipBounds(bounds);
-                canvas.DrawRoundRect(new RectF(bounds), 10, 40, rollerp);
-                float mx = bounds.Width() / 2 - 1, my = bounds.Height() / 2 -1 ; 
-                if (touch_y!=0)
+                canvas.DrawRoundRect(new RectF(bounds), 40, 40, rollerp);
+                float mx = bounds.Width() / 2 - 1, my = bounds.Height() / 2 - 1;
+                setMiddle(my);
+                string print = printArrow();
+                if (touch_y != 0)
                 {
-                    if (touch_y < bounds.Top & touch_y > bounds.Bottom)
-                    {
-                        my = touch_y;
-                        roller.Text = "Here";
-                    }
+                    if (touch_y < bounds.Top + mx)
+                        touch_y = bounds.Top + mx;
+                    else if(touch_y > bounds.Bottom - mx)
+                        touch_y = bounds.Bottom - mx;
                 }
-                DrawCircle(canvas, bounds.CenterX(), bounds.CenterY(), mx, my, backp);
-                DrawCircle(canvas, bounds.CenterX(), bounds.CenterY(), mx, my, p);
+                canvas.DrawCircle(bounds.CenterX(), touch_y, mx-2, p);
+                rollerp.TextSize = 40;
+                rollerp.FakeBoldText = true;
+                int distance_y = 40;
+                canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14, rollerp);
+                rollerp.SetARGB(255 , 6, 241, 77);
+                canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14 - distance_y, rollerp);
+                canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14 + distance_y, rollerp);
+                
             }
-            return true;
-        }*/
+        }
 
         private Paint createPaint(int width,bool StyleFillorStroke, Xamarin.Forms.Color color)
         {
@@ -98,19 +108,54 @@ namespace Mousey.Droid
             p.Color = color.ToAndroid();
             return p;
         }
-
-        private void DrawCircle(Canvas c,float mx, float my, float rx, float ry, Paint p)
+        
+        //the function set the middle only in the first itteration 
+        private void setMiddle(float middle)
         {
-            if(rx<ry)
-                c.DrawCircle(mx, my, rx, p);
-            else
-                c.DrawCircle(mx, my, ry, p);
+            //first time attempt set it in the middle
+            if (middle_y == -1)
+            {
+                middle_y = middle;
+                resetPosition();
+            }
         }
 
-        protected void ChangeColor()
+        //the function reset the position of the roller
+        private void resetPosition()
         {
-            Control.SetBackgroundColor(global::Android.Graphics.Color.Red);
+            touch_y = middle_y;
+            prev_touch_y = middle_y;
         }
 
+        //the function set a new Position to the roller
+        private void setPostion(float new_y)
+        {
+            prev_touch_y = touch_y;
+            touch_y = new_y;
+        }
+
+        //the function return the string to print
+        private String printArrow()
+        {
+            if (prev_touch_y > touch_y)
+                return "↑";
+            else if (prev_touch_y < touch_y)
+                return "↓";
+            return "";
+        }
+
+        //the function print the Arrows
+        private void printRoller(Canvas canvas)
+        {
+            //Todo
+            /*canvas.DrawCircle(bounds.CenterX(), touch_y, mx - 2, p);
+            rollerp.TextSize = 40;
+            rollerp.FakeBoldText = true;
+            int distance_y = 40;
+            canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14, rollerp);
+            rollerp.SetARGB(255, 6, 241, 77);
+            canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14 - distance_y, rollerp);
+            canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14 + distance_y, rollerp);*/
+        }
     }
 }

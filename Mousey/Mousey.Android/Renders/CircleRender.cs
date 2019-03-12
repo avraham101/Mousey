@@ -54,7 +54,7 @@ namespace Mousey.Droid
                 backp.SetStyle(Paint.Style.Fill);
                 backp.StrokeWidth = 4;
                 System.Drawing.Color c = circle.BackgroundColor;
-                backp.SetARGB(255,c.R,c.G,c.B);
+                backp.SetARGB(255, c.R, c.G, c.B);
 
                 Rect oldBounds = new Rect();
                 canvas.GetClipBounds(oldBounds);
@@ -68,5 +68,6 @@ namespace Mousey.Droid
                 canvas.DrawCircle(mx, my, raduis, backp);
             }
         }
+        
     }
 }

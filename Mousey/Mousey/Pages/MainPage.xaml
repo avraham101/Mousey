@@ -38,9 +38,9 @@
                 <!--The buttons right click,roller,left click-->
                 <Grid Grid.Row="0" ColumnSpacing="0" Margin="2,2,2,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="6*"/>  <!--Left-->
-                        <ColumnDefinition Width="*"/> <!--Roller-->
-                        <ColumnDefinition Width="6*"/> <!--Right-->
+                        <ColumnDefinition Width="11*"/>  <!--Left-->
+                        <ColumnDefinition Width="2*"/> <!--Roller-->
+                        <ColumnDefinition Width="11*"/> <!--Right-->
                     </Grid.ColumnDefinitions>
                     <!--Left-->
                     <Frame Grid.Column="0" OutlineColor="Black" BackgroundColor="Gray" Padding="1" HasShadow="True" CornerRadius="10">
@@ -54,7 +54,7 @@
                             <RowDefinition Height="5*"/> <!--Roller-->
                         </Grid.RowDefinitions>
                         <local:Circle Grid.Row="0" BackgroundColor="{Binding DotColor}" Margin="3,0,3,0"/>
-                        <local:Roller Grid.Row="1" BackgroundColor="Gray" CornerRadius="30" Margin="2,0,2,0"/>
+                        <local:Roller Grid.Row="1" BackgroundColor="Transparent" Margin="2,0,2,0"/>
                     </Grid>
                     <!--Right-->
                     <Frame Grid.Column="2" OutlineColor="Black" BackgroundColor="Gray" Padding="1" HasShadow="True" CornerRadius="10">
@@ -87,13 +87,24 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="4*"/>
                     </Grid.ColumnDefinitions>
-                    <local:Circle Grid.Column="1" BackgroundColor="{Binding DotColor}" Margin="3,0,3,0"/>
+                    <local:Circle Grid.Column="1" BackgroundColor="{Binding DotColor}"/>
                 </Grid>
                 <Grid Grid.Row="1" ColumnSpacing="0"> <!--Speical Keys Row-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>  
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Caps Lock Design-->
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--need another disgen for this button-->
+                        <local:Button2Texts Grid.Column="0" Text="Caps Lock" Text2="" Margin="1,1,1,1" CornerRadius="5" TextSize="30" TextSize2="30" HorizonalSpace="25" VerticalSpace="25" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Circle Grid.Column="1" BackgroundColor="Yellow"/>
+                    </Grid>
                 </Grid>
                 <Grid Grid.Row="2" ColumnSpacing="0"> <!--Numbers Row-->
                     <!--10 columns-->

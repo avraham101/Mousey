@@ -9,8 +9,8 @@ namespace Mousey
     {
         private String text2;
         private Color textColor2;
-        private int textSize;
-        private int textSize2;
+        private int textSize = 70;
+        private int textSize2 = 50;
         private int verticalSpace=5;
         private int horizonalSpace=5;
         public String Text2

@@ -121,34 +121,34 @@
                         <ColumnDefinition Width="*"/> <!--9-->
                     </Grid.ColumnDefinitions>
                     <Frame Grid.Column="0" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="1" Text2="!" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="1" Text2="!" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="1" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="2" Text2="@" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="2" Text2="@" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="2" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="3" Text2="#" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="3" Text2="#" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="3" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="4" Text2="$" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="4" Text2="$" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="4" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="5" Text2="%" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="5" Text2="%" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="5" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="6" Text2="^" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="6" Text2="^" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="6" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="7" Text2=";" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="7" Text2=";" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="7" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="8" Text2="*" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="8" Text2="*" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="8" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="9" Text2="(" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="9" Text2="(" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="9" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="0" Text2=")" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="0" Text2=")" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                 </Grid> 
                 <Grid Grid.Row="3" ColumnSpacing="0"> <!--Q to P Row-->
@@ -166,34 +166,34 @@
                         <ColumnDefinition Width="*"/> <!--9-->
                     </Grid.ColumnDefinitions>
                     <Frame Grid.Column="0" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="Q" Text2="/" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" VerticalSpace="8" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="Q" Text2="/" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  VerticalSpace="8" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="1" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="W" Text2="'" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" VerticalSpace="18" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="W" Text2="'" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  VerticalSpace="18" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="2" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="E" Text2="ק" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="E" Text2="ק" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="3" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="R" Text2="ר" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="R" Text2="ר" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="4" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="T" Text2="א" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="T" Text2="א" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="5" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="Y" Text2="ט" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="Y" Text2="ט" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="6" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="U" Text2="ו" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="U" Text2="ו" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="7" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="I" Text2="ן" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="I" Text2="ן" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="8" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="O" Text2="ם" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="O" Text2="ם" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="9" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="P" Text2="פ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="P" Text2="פ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                 </Grid>
                 <Grid Grid.Row="4" ColumnSpacing="0"> <!--A to ; Row-->
@@ -212,37 +212,37 @@
                         <ColumnDefinition Width="*"/> <!--10-->
                     </Grid.ColumnDefinitions>
                     <Frame Grid.Column="0" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="A" Text2="ש" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="A" Text2="ש" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="1" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="S" Text2="ד" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="S" Text2="ד" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="2" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="D" Text2="ג" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="D" Text2="ג" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="3" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="F" Text2="כ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="F" Text2="כ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="4" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="G" Text2="ע" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="G" Text2="ע" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="5" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="H" Text2="י" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" VerticalSpace="10" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="H" Text2="י" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" VerticalSpace="10" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="6" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="J" Text2="ח" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="J" Text2="ח" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="7" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="K" Text2="ל" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="K" Text2="ל" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="8" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="L" Text2="ך" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="L" Text2="ך" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="9" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text=";" Text2="ף" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" HorizonalSpace="7" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text=";" Text2="ף" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  HorizonalSpace="7" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="10" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="'" Text2="," Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="'" Text2="," Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                 </Grid>
                 <Grid Grid.Row="5" ColumnSpacing="0"> <!--Z to / Row-->
@@ -260,34 +260,34 @@
                         <ColumnDefinition Width="*"/> <!--9-->
                     </Grid.ColumnDefinitions>
                     <Frame Grid.Column="0" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="Z" Text2="ז" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="Z" Text2="ז" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="1" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="X" Text2="ס" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="X" Text2="ס" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="2" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="C" Text2="ב" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="C" Text2="ב" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="3" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="V" Text2="ה" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="V" Text2="ה" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="4" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="B" Text2="נ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="B" Text2="נ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="5" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="N" Text2="מ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" VerticalSpace="10" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="N" Text2="מ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  VerticalSpace="10" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="6" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="M" Text2="צ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" VerticalSpace="18" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="M" Text2="צ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  VerticalSpace="18" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="7" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="," Text2="ת" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" HorizonalSpace="7" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="," Text2="ת" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  HorizonalSpace="7" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="8" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="." Text2="ץ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="." Text2="ץ" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="9" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="/" Text2="." Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="/" Text2="." Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                 </Grid>
                 <Grid Grid.Row="6" ColumnSpacing="0" Margin="2,5,2,5"> <!--Speical Keys Row-->
@@ -303,13 +303,13 @@
                         <local:Button2Texts Text="Ctrl" Text2="" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="30" TextSize2="30" HorizonalSpace="25" VerticalSpace="2" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="1" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text=" " Text2=" " Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text=" " Text2=" " Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="2" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
                         <local:Button2Texts Text="Alt" Text2="" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="30" TextSize2="30" HorizonalSpace="25" VerticalSpace="10" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                     <Frame Grid.Column="3" Margin="1,1,1,1" OutlineColor="Black" BackgroundColor="Transparent" HorizontalOptions="Fill" Padding="1" CornerRadius="5">
-                        <local:Button2Texts Text="Enter" Text2="" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5" TextSize="40" TextSize2="30" HorizonalSpace="25" VerticalSpace="25" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
+                        <local:Button2Texts Text="Enter" Text2="" Clicked="KeyBoard_Clicked" Margin="1,1,1,1" CornerRadius="5"  HorizonalSpace="25" VerticalSpace="25" BackgroundColor="#DDDDDD" TextColor="Black" TextColor2="Red"/>
                     </Frame>
                 </Grid>
             </Grid>

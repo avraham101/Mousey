@@ -65,6 +65,7 @@ namespace Mousey.Droid
 
             return false;
         }
+
         protected override void DispatchDraw(Canvas canvas)
         {
             base.DispatchDraw(canvas);
@@ -76,6 +77,7 @@ namespace Mousey.Droid
                 canvas.GetClipBounds(bounds);
                 canvas.DrawRoundRect(new RectF(bounds), 40, 40, rollerp);
                 float mx = bounds.Width() / 2 - 1, my = bounds.Height() / 2 - 1;
+                float raduis = mx - 3;
                 setMiddle(my);
                 string print = printArrow();
                 if (touch_y != 0)
@@ -85,14 +87,14 @@ namespace Mousey.Droid
                     else if(touch_y > bounds.Bottom - mx)
                         touch_y = bounds.Bottom - mx;
                 }
-                canvas.DrawCircle(bounds.CenterX(), touch_y, mx-2, p);
-                rollerp.TextSize = 40;
+                rollerp.TextSize = 90; //need to change to magic number
                 rollerp.FakeBoldText = true;
-                int distance_y = 40;
-                canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14, rollerp);
+                canvas.DrawCircle(bounds.CenterX(), touch_y, raduis, p);
+                float text_y_position = touch_y + (float)(rollerp.TextSize / 2.8);
+                canvas.DrawText(print, bounds.CenterX() - rollerp.TextSize / 2, text_y_position, rollerp);
                 rollerp.SetARGB(255 , 6, 241, 77);
-                canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14 - distance_y, rollerp);
-                canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14 + distance_y, rollerp);
+                canvas.DrawText(print, bounds.CenterX() - rollerp.TextSize / 2, text_y_position + raduis * 2, rollerp);
+                canvas.DrawText(print, bounds.CenterX() - rollerp.TextSize / 2, text_y_position - raduis * 2, rollerp);
                 
             }
         }
@@ -145,16 +147,17 @@ namespace Mousey.Droid
         }
 
         //the function print the Arrows
-        private void printRoller(Canvas canvas)
+        private void printRoller(Canvas canvas,Rect bounds)
         {
             //Todo
-            /*canvas.DrawCircle(bounds.CenterX(), touch_y, mx - 2, p);
-            rollerp.TextSize = 40;
-            rollerp.FakeBoldText = true;
+            /*Paint p = createPaint(2, true, Xamarin.Forms.Color.FromHex("#D0D0D0"));
+            canvas.DrawCircle(bounds.CenterX(), touch_y, mx - 2, p);
+            p.TextSize = 40;
+            p.FakeBoldText = true;
             int distance_y = 40;
-            canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14, rollerp);
+            canvas.DrawText(p, bounds.Left + mx - 19, touch_y + 14, rollerp);
             rollerp.SetARGB(255, 6, 241, 77);
-            canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14 - distance_y, rollerp);
+            canvas.DrawText(p, bounds.Left + mx - 19, touch_y + 14 - distance_y, rollerp);
             canvas.DrawText(print, bounds.Left + mx - 19, touch_y + 14 + distance_y, rollerp);*/
         }
     }
